@@ -1,0 +1,20 @@
+name: Create release
+
+on: 
+  workflow_dispatch:
+    inputs:
+      increment:
+        type: choice
+        description: 'Version to increment'
+        options:
+        - 'major'
+        - 'minor'
+        - 'patch'
+        default: 'patch'
+
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Increment: ${{ github.event.inputs.increment }}"

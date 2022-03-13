@@ -1,0 +1,10 @@
+tasks:
+- init: |
+    cargo build
+    
+    rustup component add clippy
+    rustup component add rustfmt
+
+vscode:
+  extensions:
+    - rust-lang.rust
